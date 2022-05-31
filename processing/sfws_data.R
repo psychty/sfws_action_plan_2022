@@ -1,5 +1,5 @@
 library(easypackages)
-libraries(c("tidyverse", 'jsonlite', 'stringi', 'fastDummies'))
+libraries(c('readxl',"tidyverse", 'jsonlite', 'stringi', 'fastDummies'))
 
 raw_data <- read_excel("./sfws_action_plan_2022/raw_data/SFWS Action Plan May 2022 Update.xlsx")
 

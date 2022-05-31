@@ -1,4 +1,4 @@
-import Highlights from '../components/highlight'
+import Key_points from '../components/key_points'
 import Cards from '../components/cards'
 
 import React from 'react'
@@ -6,7 +6,7 @@ import React from 'react'
 function Home() {
     return (
         <div>
-            <Highlights />
+            <Key_points />
             <Cards />
         </div>
     )

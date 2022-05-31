@@ -11,3 +11,96 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  width: 80%;
+  margin: auto;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #4c4c4e;
+}
+
+b {
+  color: #1e4b7a;
+}
+
+/*  Colour boxes by hic_number */
+.working_partnership {
+ background: #9B2948;
+ }
+
+.working_partnership p {
+  color: #fff;
+} 
+
+.gather_data {
+background: #CA7F88;
+}
+
+.gather_data p {
+  color: #4c4c4e;
+}
+ 
+.health_inequalities {
+background: #C1852A;
+}
+
+.health_inequalities p {
+  color: #fff;
+} 
+
+.deliver_cccc {
+background: #4E235A;
+}
+
+.deliver_cccc p {
+  color: #fff;
+} 
+
+.integrated_approach {
+background: #546F2A;
+}
+
+.integrated_approach p {
+  color: #fff;
+  }
+  
+
+.build_sustain_capacity {
+background: #8DAFC4;
+}
+
+.tackle_cheap_illicit_tob {
+background: #B5D384;
+}
+
+.advocacy {
+background: #E53049;
+}
+
+.advocacy p {
+color: #fff;
+}
+    
+.yp_smokefree {
+background: #00A18C;
+}
+
+.yp_smokefree p {
+color: #fff;
+}
+  
+.smokefree_environments {
+background: #006BA8;
+}
+  
+.smokefree_environments p {
+  color: #fff;
+  }
