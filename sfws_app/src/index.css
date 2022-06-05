@@ -72,7 +72,6 @@ background: #546F2A;
   color: #fff;
   }
   
-
 .build_sustain_capacity {
 background: #8DAFC4;
 }
@@ -104,3 +103,14 @@ background: #006BA8;
 .smokefree_environments p {
   color: #fff;
   }
+
+.hic_buttons {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.hic_buttons p{
+font-size: .7rem;
+text-align: center;
+}

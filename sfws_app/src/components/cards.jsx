@@ -30,10 +30,12 @@ return (
       }}>
        {cards.map((card)=> {
       return (
-       <SplideSlide>
-        <Card_item className = {card.hic_} key = {card.ap_number}>
+       <SplideSlide key = {card.ap_number}>
+        <Card_item className = {card.hic_} >
           <h4>{card.title}</h4>
+          <p className = 'action_card_text'>{card.text}</p>
           <p>{card.status}</p>
+          <p className = 'action_number'>{card.ap_number}</p>
         </Card_item>
        </SplideSlide>
              );
@@ -45,24 +47,41 @@ return (
    }
 
 const Wrapper = styled.div ` 
-margin: 4rem 0rem;
+// margin: 4rem 0rem;
 `
 const Card_item = styled.div `
    // min-height: 20vh;
    // max-height: 40vh;
    height: 40vh;
    max-width: 30vw;
+   padding: 5px;
    padding-left: 10px;
    border-radius: 25px;
    border: 1px solid #c9c9c9;
    overflow: hidden;
 
+.action_number {
+   position: absolute;
+   padding: 0px;
+   margin: 0px;
+   z-index: 10;
+   right: 5%;
+   bottom: 0%;
+   font-size: 3rem;
+   font-family: 'Poppins', serif;
+   font-weight: bold;
+}
 
-
+// TODO if the div is bigger then apply no gradient to the text
+.action_card_text {
+   -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+   max-height: 15vh;
+}
 
 h4{
    margin-top: 5px;
    color: #ffffff;
+   font-size: 1.1rem;
 }    
 `
 export default Cards

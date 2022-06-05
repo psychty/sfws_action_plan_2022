@@ -27,3 +27,10 @@ transformed_df %>%
   toJSON() %>% 
   write_lines('./sfws_action_plan_2022/sfws_app/public/sfws_2022.json')
 
+raw_data %>% 
+  select(hic_label, hic_class) %>% 
+  unique() %>%
+  mutate(hic_title = ifelse(hic_class == 'working_partnership', 'Partnerships', ifelse(hic_class == 'gather_data', 'Data', ifelse(hic_class == 'health_inequalities', 'Health inequalities', ifelse(hic_class == 'deliver_cccc', 'Coordinated communication', ifelse(hic_class == 'integrated_approach', 'Integrated approach', ifelse(hic_class == 'build_sustain_capacity', 'Sustain capacity', ifelse(hic_class == 'tackle_cheap_illicit_tob', 'Illicit tobacco', ifelse(hic_class == 'advocacy', 'Advocacy', ifelse(hic_class == 'yp_smokefree', 'Young people', ifelse(hic_class == 'smokefree_environments', 'Smokefree environments', NA))))))))))) %>% 
+  toJSON() %>% 
+  write_lines('./sfws_action_plan_2022/sfws_app/public/hic.json')
+
