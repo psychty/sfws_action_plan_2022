@@ -21,6 +21,7 @@ return (
   <div>
      <Wrapper>
       <h3>SFWS Actions</h3>
+      <p>The carousel below shows all SFWS actions, you can click on the left and right arrows or click/point on an action and drag them left and right to see other actions.</p>
      
       <Splide options = {{
          perPage: 3,

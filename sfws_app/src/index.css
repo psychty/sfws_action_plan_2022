@@ -31,6 +31,11 @@ b {
   color: #1e4b7a;
 }
 
+a{
+  text-decoration: none;
+  color: #4c4c4e;
+}
+
 /*  Colour boxes by hic_number */
 .working_partnership {
  background: #9B2948;
@@ -113,4 +118,30 @@ align-items: center;
 .hic_buttons p{
 font-size: .7rem;
 text-align: center;
+}
+
+.status_button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.status_button p{
+  font-size: .7rem;
+  text-align: center;
+}
+
+
+
+.status_button_in_progress {
+  background-color: #8DAFC4;
+  font-size: .7rem;
+  text-align: center;
+}
+
+.status_button_complete {
+  background-color: hsl(101, 32%, 66%);
+  font-size: .7rem;
+  text-align: center;
 }

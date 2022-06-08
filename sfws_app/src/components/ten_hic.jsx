@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { BsFillGridFill } from 'react-icons/bs';
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 
@@ -19,17 +18,19 @@ function Ten_hic() {
 
     return (
         <div>
-            <p>The 2019-22 Smokefree West Sussex Tobacco Control Strategy actions are outlined below. These are a collection of actions agreed by members of the Smokefree West Sussex Partnership to take forward the tobacco control agenda in the county. Actions are coloured by the Department of Health's 2008 10 high impact changes to achieve tobacco control (described below).</p>
+            <p>This page shows the 2019-22 Smokefree West Sussex Tobacco Control Strategy actions. These are a collection of actions agreed by members of the Smokefree West Sussex Partnership to take forward the tobacco control agenda in the county. Actions are coloured by the Department of Health's 2008 10 high impact changes to achieve tobacco control (described below).</p>
             {/* <p>You can filter the actions by these 10 high impact changes as well as by whether these actions are complete or incomplete.</p> */}
              <p>Click on a high impact change icon below to find out more.</p>
        
     <div className = 'hic_buttons'>
         {hics.map((hic)=> {
             return (
-            <HicItemDiv key = {hic.hic_class} className = {hic.hic_class}>
-            <p>{hic.hic_title}</p>
-            {/* <BsFillGridFill /> */}
-            </HicItemDiv>          
+            <NavLink to={'/hic/' + hic.hic_class}>
+                <HicItemDiv key = {hic.hic_class} className = {hic.hic_class}>
+                 <p>{hic.hic_title}</p>
+                {/* <BsFillGridFill /> */}
+                </HicItemDiv>
+            </NavLink>          
             );
          })}
     </div>

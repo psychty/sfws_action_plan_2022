@@ -1,11 +1,14 @@
 
 import Pages from './pages/pages';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-       <h1>Smoke Free West Sussex</h1>
+    <BrowserRouter>
+       <h1>Smoke Free West Sussex Partnership</h1>
        <Pages />
+    </BrowserRouter>
     </div>
   );
 }
