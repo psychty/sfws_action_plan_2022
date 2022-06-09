@@ -8,6 +8,7 @@ import React from 'react'
 function Home() {
     return (
         <div>
+
             <Key_points />
             <Ten_hic />
             <Action_status/>

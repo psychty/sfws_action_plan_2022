@@ -1,38 +1,36 @@
 import React from 'react'
 import styled from 'styled-components';
-import {Link, useParams } from 'react-router-dom'
+import {Link, useParams, NavLink, useLocation } from 'react-router-dom'
 import hic_df from '../hic.json';
-import { NavLink } from 'react-router-dom';
-
 
 function Chosen_hic() {
   
 let params = useParams();
-  
+
     return (
-    <div> 
-    <NavLink to={'/'}>
-    <p className = 'i_will_show_link'>Click here to go back to the home page.</p>
-    </NavLink>
-     <h4>High Impact Change in focus</h4>
 
-    {hic_df.filter(item => item.hic_class === params.hic_class).map(chosen_hic_info => (
+<div> 
+        <NavLink to={'/'}>
+        <p className = 'i_will_show_link'>Click here to go back to the home page.</p>
+        </NavLink>
 
-    <div key={chosen_hic_info.hic_class}>
-        <ChosenHicItemDiv className = {params.hic_class}>
-            <p>{chosen_hic_info.hic_title}</p>
-        </ChosenHicItemDiv>
 
-        <div>
-            <p>{chosen_hic_info.hic_label}</p>
-            <h3>What did the Department of Health say about this high impact change?</h3>
-            <p>{chosen_hic_info.hic_description}</p>
-        </div>
+
+            {hic_df.filter(item => item.hic_class === params.hic_class).map(chosen_hic_info => (
+
+            <div key={chosen_hic_info.hic_class}>
+                <ChosenHicItemDiv className = {params.hic_class}>
+                    <p>{chosen_hic_info.hic_title}</p>
+                </ChosenHicItemDiv>
+                <p>{chosen_hic_info.hic_label}</p>
+                <div>
+                <h3>What did the Department of Health say about this high impact change?</h3>
+                <p>{chosen_hic_info.hic_description}</p>
+                </div>
+            </div>
+            ))}
 
     </div>
-))}
-
-  </div>
   )
 }
 
