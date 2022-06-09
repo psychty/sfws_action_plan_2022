@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import cards_df from '../sfws_2022.json';
 import { NavLink } from 'react-router-dom';
 
-function Filtered_cards() {
+function Filtered_by_hic_cards() {
 
 let params = useParams();
 
@@ -34,7 +34,7 @@ return(
 
 const Chosen_card_item = styled.div `
    height: 15vh;
-   width: 18vw;
+//    width: 16vw;
    padding: 5px;
    padding-left: 10px;
    margin: 5px;
@@ -67,8 +67,6 @@ const Chosen_card_item = styled.div `
    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
    max-height: 10vh;
 }  
-
-
 `
 
-export default Filtered_cards
+export default Filtered_by_hic_cards

@@ -153,11 +153,18 @@ text-align: center;
   font-size: .8rem;
 }    
 
-.action_cards_wrapper {
+/* .action_cards_wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  }
+  } */
+
+.action_cards_wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 5px;
+}
+
 
 .more_info {
   margin-top: 8vh;

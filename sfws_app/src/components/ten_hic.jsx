@@ -41,8 +41,8 @@ function Ten_hic() {
 const HicItemDiv = styled.div `
 min-width: 90px;
 min-height: 90px;
-width: 6vw;
-height: 6vw;
+width: 5vw;
+height: 5vw;
 border-radius: 50%;
 display: flex;
 align-items: center;
