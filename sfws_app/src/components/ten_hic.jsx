@@ -1,42 +1,45 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation} from 'react-router-dom';
+import ten_hic_df from '../hic.json';
 
-// This function just returns a div
 function Ten_hic() {
 
-    const [hics, setHIC] = useState([]);
-    useEffect(() => {getHIC(); },[])
-    
-    // This function grabs the data - local data much be in the public folder
-    const getHIC = async () => {
-       const api = await fetch('hic.json');
-       const data = await api.json();
-       setHIC(data)
-       }
+ const location=useLocation()
 
     return (
-        <div>
-            <p>This page shows the 2019-22 Smokefree West Sussex Tobacco Control Strategy actions. These are a collection of actions agreed by members of the Smokefree West Sussex Partnership to take forward the tobacco control agenda in the county. Actions are coloured by the 2008 Department of Health (now called the Department of Health and Social Care) 10 high impact changes to achieve tobacco control.</p>
-            <p>You can view the <a className = 'i_will_show_link' href = 'https://webarchive.nationalarchives.gov.uk/ukgwa/20130123193737/http://www.dh.gov.uk/en/Publicationsandstatistics/Publications/PublicationsPolicyAndGuidance/DH_084847'>Excellence in tobacco control: 10 High Impact Changes to achieve tobacco control report</a> on the government archive website.</p>
-            <p>Click on a high impact change icon below to find out more.</p>
-       
-    <div className = 'hic_buttons'>
-        {hics.map((hic)=> {
-            return (
-            <NavLink to={'/hic/' + hic.hic_class} key = {hic.hic_class} >
+    <div>                  
+            <div className = 'hic_buttons'>
+                {ten_hic_df.map(hic => (
+                    <SLink to={'/hic/' + hic.hic_class} key = {hic.hic_class} >
+
+{/* We are using this component on both the home page and on the high impact focus page. But I want the circles to be smaller on the focus page. So here I have used useLocation and an if statement to say if the path is home then use the regular div style but if it is not (i.e. on the /hic/ route) then create divs with the smaller style */}
+
+{/* This way, I can reuse the same react component twice, which is as i understand, the point of react. */}
+
+                {location.pathname !== '/' && 
+                <HicItemSmallerDiv className = {hic.hic_class}>
+                <p>{hic.hic_title}</p>
+                </HicItemSmallerDiv>
+                    }
+
+                {location.pathname === '/' && 
                 <HicItemDiv className = {hic.hic_class}>
-                 <p>{hic.hic_title}</p>
+                <p>{hic.hic_title}</p>
                 </HicItemDiv>
-            </NavLink>          
-            );
-         })}
+                    }
+                      
+                    </SLink>          
+                ))}
+            </div>
+
+     {/* <h4>You are viewing {location.pathname}</h4> */}
+     
     </div>
 
-</div>
+    ); 
 
-    );
-        }
+}
 
 const HicItemDiv = styled.div `
 min-width: 90px;
@@ -51,5 +54,26 @@ flex-wrap: wrap;
 padding: 5px;
 margin: 3px;
 `
+
+const HicItemSmallerDiv = styled.div`
+min-width: 60px;
+min-height: 60px;
+width: 3vw;
+height: 3vw;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+padding: 5px;
+margin: 3px;
+`
+
+const SLink = styled(NavLink)`
+border-radius: 50%;
+
+&.active{
+    background: #000;
+}`
 
 export default Ten_hic
