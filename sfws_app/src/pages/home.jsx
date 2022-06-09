@@ -3,7 +3,6 @@ import Ten_hic from '../components/ten_hic'
 import Cards from '../components/cards'
 import Action_status from '../components/status'
 
-
 import React from 'react'
 
 function Home() {

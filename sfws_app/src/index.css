@@ -27,9 +27,6 @@ p {
   color: #4c4c4e;
 }
 
-b {
-  color: #1e4b7a;
-}
 
 a{
   text-decoration: none;
@@ -124,15 +121,13 @@ text-align: center;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .status_button p{
   font-size: .7rem;
   text-align: center;
 }
-
-
 
 .status_button_in_progress {
   background-color: #8DAFC4;
@@ -144,4 +139,27 @@ text-align: center;
   background-color: hsl(101, 32%, 66%);
   font-size: .7rem;
   text-align: center;
+}
+
+.i_will_show_link {
+  color: #E53049;
+  text-decoration: underline;
+}
+
+.action_card_title {
+  /* // margin-top: 5px; */
+  padding: 0px;
+  color: #ffffff;
+  font-size: .8rem;
+}    
+
+.action_cards_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  }
+
+.more_info {
+  margin-top: 8vh;
+  font-size: 1.2rem;
 }

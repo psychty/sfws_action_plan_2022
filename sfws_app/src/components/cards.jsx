@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from 'styled-components'; // create functions for stylings
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { NavLink } from 'react-router-dom';
 
 // This function just returns a div
 function Cards() {
@@ -36,6 +37,9 @@ return (
           <h4>{card.title}</h4>
           <p className = 'action_card_text'>{card.text}</p>
           <p>{card.status}</p>
+          <NavLink to={'/action/' + card.ap_number}>
+             <p className = 'more_info'>Click here to see more</p>
+          </NavLink>   
           <p className = 'action_number'>{card.ap_number}</p>
         </Card_item>
        </SplideSlide>
@@ -52,8 +56,8 @@ const Wrapper = styled.div `
 `
 const Card_item = styled.div `
    // min-height: 20vh;
-   // max-height: 40vh;
-   height: 40vh;
+   // max-height: 30vh;
+   height: 30vh;
    max-width: 30vw;
    padding: 5px;
    padding-left: 10px;
