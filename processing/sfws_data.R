@@ -23,11 +23,14 @@ binary <- strsplit("hic_advocacy hic_build_sustain_capacity hic_deliver_cccc hic
 
 for(b in binary) transformed_df[[b]] <- as.logical(transformed_df[[b]])
 
+hic_info <- read_csv('./sfws_action_plan_2022/raw_data/hic_info.csv')
+
 transformed_df %>% 
+  left_join(hic_info[c('hic_class', 'hic_title')], by = c('hic_' = 'hic_class')) %>% 
   toJSON() %>% 
   write_lines('./sfws_action_plan_2022/sfws_app/src/sfws_2022.json')
 
-read_csv('./sfws_action_plan_2022/raw_data/hic_info.csv') %>% 
+hic_info %>% 
   toJSON() %>% 
   write_lines('./sfws_action_plan_2022/sfws_app/src/hic.json')
 
