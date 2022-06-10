@@ -32,9 +32,7 @@ function Ten_hic() {
                     </SLink>          
                 ))}
             </div>
-
-     {/* <h4>You are viewing {location.pathname}</h4> */}
-     
+    
     </div>
 
     ); 
@@ -42,8 +40,8 @@ function Ten_hic() {
 }
 
 const HicItemDiv = styled.div `
-min-width: 90px;
-min-height: 90px;
+min-width: 85px;
+min-height: 85px;
 width: 5vw;
 height: 5vw;
 border-radius: 50%;
@@ -68,7 +66,6 @@ flex-wrap: wrap;
 padding: 5px;
 margin: 3px;
 `
-
 const SLink = styled(NavLink)`
 border-radius: 50%;
 

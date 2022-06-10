@@ -1,7 +1,7 @@
 import Key_points from '../components/key_points'
 import Ten_hic from '../components/ten_hic'
-import Cards from '../components/cards'
-import Action_status from '../components/status'
+import Cards from '../components/overall_action_cards'
+import Progress_component from '../components/progress'
 
 import React from 'react'
 
@@ -11,7 +11,8 @@ function Home() {
 
             <Key_points />
             <Ten_hic />
-            <Action_status/>
+            <p>You can also look at just those actions which are complete or in progress using the icons below.</p>
+            <Progress_component/>
             <Cards />
         </div>
     )

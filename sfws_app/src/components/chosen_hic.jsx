@@ -14,8 +14,6 @@ let params = useParams();
         <p className = 'i_will_show_link'>Click here to go back to the home page.</p>
         </NavLink>
 
-
-
             {hic_df.filter(item => item.hic_class === params.hic_class).map(chosen_hic_info => (
 
             <div key={chosen_hic_info.hic_class}>

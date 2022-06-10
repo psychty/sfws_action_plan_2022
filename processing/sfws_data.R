@@ -25,17 +25,26 @@ for(b in binary) transformed_df[[b]] <- as.logical(transformed_df[[b]])
 
 transformed_df %>% 
   toJSON() %>% 
-  write_lines('./sfws_action_plan_2022/sfws_app/public/sfws_2022.json')
-
-transformed_df %>% 
-  toJSON() %>% 
   write_lines('./sfws_action_plan_2022/sfws_app/src/sfws_2022.json')
 
 read_csv('./sfws_action_plan_2022/raw_data/hic_info.csv') %>% 
   toJSON() %>% 
-  write_lines('./sfws_action_plan_2022/sfws_app/public/hic.json')
-
-read_csv('./sfws_action_plan_2022/raw_data/hic_info.csv') %>% 
-  toJSON() %>% 
   write_lines('./sfws_action_plan_2022/sfws_app/src/hic.json')
+
+transformed_df %>% 
+  group_by(status) %>% 
+  summarise(actions = n()) %>% 
+  toJSON() %>% 
+  write_lines('./sfws_action_plan_2022/sfws_app/src/progress.json')
+
+transformed_df %>% 
+  group_by(status) %>% 
+  summarise(actions = n()) %>% 
+  ungroup() %>% 
+  pivot_wider(values_from = 'actions',
+              names_from = 'status') %>% 
+  mutate(Total = Complete + Incomplete) %>% 
+  toJSON() %>% 
+  write_lines('./sfws_action_plan_2022/sfws_app/src/progress_summary.json')
+
 

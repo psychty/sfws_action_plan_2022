@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
     <BrowserRouter>
-       <h1>Smoke Free West Sussex Partnership</h1>
+       <h2>Smoke Free West Sussex Partnership</h2>
        <Pages />
     </BrowserRouter>
     </div>

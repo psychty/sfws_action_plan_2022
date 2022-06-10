@@ -1,22 +1,10 @@
-import { useEffect, useState } from "react";
-import styled from 'styled-components'; // create functions for stylings
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components'; 
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
-import { NavLink } from 'react-router-dom';
+import card_df from '../sfws_2022.json';
 
-// This function just returns a div
 function Cards() {
-
-const [cards, setCards] = useState([]);
-
-useEffect(() => {getActions(); },[])
-
-// This function grabs the data - local data much be in the public folder
-const getActions = async () => {
-   const api = await fetch('sfws_2022.json');
-   const data = await api.json();
-   setCards(data)
-   }
 
 return (
   <div>
@@ -30,7 +18,8 @@ return (
          pagination: false,
          gap: '15px',
       }}>
-       {cards.map((card)=> {
+         
+       {card_df.map((card)=> {
       return (
        <SplideSlide key = {card.ap_number}>
         <Card_item className = {card.hic_} >
@@ -58,7 +47,7 @@ const Card_item = styled.div `
    // min-height: 20vh;
    // max-height: 30vh;
    height: 30vh;
-   max-width: 30vw;
+   max-width: 25vw;
    padding: 5px;
    padding-left: 10px;
    border-radius: 25px;
@@ -77,10 +66,20 @@ const Card_item = styled.div `
    font-weight: bold;
 }
 
+.more_info {
+   position: absolute;
+   padding: 0px;
+   margin: 0px;
+   z-index: 10;
+   font-weight: bold;
+   font-size: 1rem;
+ }
+ 
+
 // TODO if the div is bigger then apply no gradient to the text
 .action_card_text {
    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
-   max-height: 15vh;
+   max-height: 18vh;
 }
 
 h4{
