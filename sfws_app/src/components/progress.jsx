@@ -13,7 +13,6 @@ function Progress_component() {
           
         <div>   
        
-                   
   {/* We are using this component on both the home page and on the progress focus page. But I want the circles to be smaller on the focus page. So here I have used useLocation and an if statement to say if the path is home then use the regular div style but if it is not (i.e. on the /hic/ route) then create divs with the smaller style */}
             
         {location.pathname === '/' && 

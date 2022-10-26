@@ -24,7 +24,11 @@ function Action_card_detail() {
                             <p>{chosen_action.success}</p>
                             <h4>Which partners are involved?</h4>
                             <p>{chosen_action.partners}</p>
-                            <h4>June 2022 update</h4>
+                            <h4>2020 update</h4>
+                            <p>{chosen_action.update_2020}</p>
+                            <h4>2021 update</h4>
+                            <p>{chosen_action.update_2021}</p>
+                            <h4>August 2022 update</h4>
                             <p>{chosen_action.latest_update}</p>
                             <div className='flexy_beast_3'>
                             <h4>This action is {chosen_action.status.toLocaleLowerCase()}</h4>
