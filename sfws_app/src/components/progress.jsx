@@ -33,8 +33,8 @@ function Progress_component() {
             {progress_summary_df.map(actions => ( 
                 <div>
                    <p>There were a total of <b>69</b> actions in the SFWS 2019-22 action plan.</p>
-                   <p>As part of the 2022 review, four actions were removed as no longer relevant and an additional <b>26</b> actions were added as a result of the Khan report. As such there are currently <b>88 actions</b> on the SFWS action plan.</p>
-                   <p>Of these 88 actions, <b>{actions.Complete}</b> actions (<b>{Math.round((+actions.Complete / +actions.Total) * 100)}%</b>) were considered complete in the August 2022 review. This leaves <b>{actions.Incomplete}</b> actions left that are still in progress.</p>
+                   <p>As part of the 2022 review, five actions were removed as no longer relevant and an additional <b>26</b> actions were added as a result of reviewing the progress against the current strategy, analyses of updated local data, and relevant recommendations within the Khan report.</p>
+                   <p>As such, there are currently <b>90 actions</b> on the SFWS action plan and of these, <b>{actions.Complete}</b> actions (<b>{Math.round((+actions.Complete / +actions.Total) * 100)}%</b>) were considered complete in the August 2022 review. This leaves <b>{actions.Incomplete}</b> actions left that are still in progress.</p>
                    <p>Use the icons below to show complete and incomplete actions.</p>
                 </div>   
              ))}

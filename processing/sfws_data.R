@@ -22,9 +22,6 @@ transformed_df <- raw_data %>%
   mutate(latest_update = str_trim(substr(latest_update, regexpr(":", latest_update, fixed = TRUE) + 1, nchar(latest_update)), side = 'both')) %>% 
   bind_cols(model.matrix(~ hic_ - 1, .)) 
 
-# TODO # I am not sure how this will behave given the two extra update paragraphs available.
-# It might be fine.
-
 # specify columns to turn into logical/boolean fields (true/false)
 binary <- strsplit("hic_advocacy hic_build_sustain_capacity hic_deliver_cccc hic_gather_data hic_health_inequalities hic_integrated_approach hic_smokefree_environments hic_tackle_cheap_illicit_tob hic_working_partnership hic_yp_smokefree",
                    " ")[[1]]
