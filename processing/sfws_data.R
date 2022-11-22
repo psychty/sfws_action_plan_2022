@@ -54,5 +54,3 @@ transformed_df %>%
   mutate(Total = Complete + Incomplete) %>% 
   toJSON() %>% 
   write_lines('C:/Users/asus/OneDrive/Documents/Repositories/sfws_action_plan_2022/sfws_app/src/progress_summary.json')
-
-
