@@ -13,7 +13,6 @@ function Progress_component() {
           
         <div>   
        
-                   
   {/* We are using this component on both the home page and on the progress focus page. But I want the circles to be smaller on the focus page. So here I have used useLocation and an if statement to say if the path is home then use the regular div style but if it is not (i.e. on the /hic/ route) then create divs with the smaller style */}
             
         {location.pathname === '/' && 
@@ -33,7 +32,9 @@ function Progress_component() {
         <div>
             {progress_summary_df.map(actions => ( 
                 <div>
-                   <p>There are a total of <b>{actions.Total}</b> actions in the SFWS 2019-22 action plan. Of these, <b>{actions.Complete}</b> actions (<b>{Math.round((+actions.Complete / +actions.Total) * 100)}%</b>) were considered complete in the May 2022 review. This leaves <b>{actions.Incomplete}</b> actions left that are still in progress.</p>
+                   <p>There were a total of <b>69</b> actions in the SFWS 2019-22 action plan.</p>
+                   <p>As part of the 2022 review, seven actions were removed as no longer relevant and an additional <b>26</b> actions were added as a result of reviewing the progress against the current strategy, analyses of updated local data, and relevant recommendations within the Khan report.</p>
+                   <p>As such, there are currently <b>88 actions</b> on the SFWS action plan and of these, <b>{actions.Complete}</b> actions (<b>{Math.round((+actions.Complete / +actions.Total) * 100)}%</b>) were considered complete in the August 2022 review. This leaves <b>{actions.Incomplete}</b> actions left that are still in progress.</p>
                    <p>Use the icons below to show complete and incomplete actions.</p>
                 </div>   
              ))}
