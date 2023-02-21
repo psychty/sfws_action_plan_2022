@@ -1,10 +1,9 @@
 library(easypackages)
-libraries(c('readxl',"tidyverse", 'jsonlite', 'stringi', 'fastDummies'))
+libraries(c('readxl',"tidyverse", 'jsonlite', 'stringi', 'fastDummies', 'flextable'))
 
 raw_data <- read_excel("C:/Users/asus/OneDrive/Documents/Repositories/sfws_action_plan_2022/raw_data/SFWS Action Plan Clean October 2022 Update.xlsx")
 
 # We need to transform this file into a table with binary fields for HIC and status complete.
-
 unique(raw_data$`Original or extension`)
 
 transformed_df <- raw_data %>% 
@@ -54,3 +53,13 @@ transformed_df %>%
   mutate(Total = Complete + Incomplete) %>% 
   toJSON() %>% 
   write_lines('C:/Users/asus/OneDrive/Documents/Repositories/sfws_action_plan_2022/sfws_app/src/progress_summary.json')
+
+table_df <- transformed_df %>% 
+  mutate(Action = paste0(ap_number, ' - ', title)) %>% 
+  select(Action, Description = text, `What does success look like?` = success, `Which partners are involved` = partners, Status = status, `Latest update` = latest_update)
+
+table_df %>% 
+  flextable() %>% 
+  print(., preview = 'docx')
+
+
